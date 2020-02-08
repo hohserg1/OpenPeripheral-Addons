@@ -31,8 +31,14 @@ buildscript {
         classpath 'net.thesilkminer.gradle.translationchecker:TranslationChecker:1.1'
     }
 }
+apply plugin: 'java'
 
 apply plugin: 'forge'
+
+sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
 
 //================================================
 // Dependencies
